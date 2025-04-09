@@ -9,7 +9,7 @@ const ProductsPage = () => {
   useEffect(() => {
     async function fetchGadgets() {
       try {
-        const response = await fetch("../api/gadgets"); // or use your backend URL here
+        const response = await fetch("http://localhost:3001/api/gadgets"); // or use your backend URL here
         console.log(response); // Log the response to check if it's correct
         if (response.ok) {
           const data = await response.json();
@@ -29,8 +29,8 @@ const ProductsPage = () => {
     <div>
       <h1>Our Products</h1>
       <div>
-        {gadgets.map((gadget) => (
-          <Product key={gadget._id} product={gadget} />
+        {gadgets.map((gadget, index) => (
+          <Product key={index} card={gadget} />
         ))}
       </div>
     </div>

@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const { MongoClient } = require("mongodb");
 const cors = require("cors");
@@ -6,8 +7,7 @@ const app = express();
 const port = 3001; // Choose a port for the backend
 
 // MongoDB connection URI and client
-const uri =
-  "mongodb+srv://monunanabala:monu@cluster0.2q9pxvx.mongodb.net/?retryWrites=true&w=majority";
+const uri = process.env.MONGO_URI;
 const client = new MongoClient(uri);
 let gadgetsCollection;
 
