@@ -1,4 +1,5 @@
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import "./globals.css";
 
 export const metadata = {
   title: "Next.js",
